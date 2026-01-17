@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: "Ubuntu", sans-serif;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: hsl(218, 100%, 97%);
+}
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.formContainer{
+width: 60%;
+background-color: white;
+border-radius: 10px;
+padding: 20px;
+display: flex;
+align-items: stretch;
+
+}
+.stepsView{
+    width: 40%;
+    padding: 40px;
+    background-image: url(/assets/images/bg-sidebar-desktop.svg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.step{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 15px;
+}
+.stepNumber{
+    padding: 5px 10px;
+    border-radius: 50%;
+    border: 1px solid white;
+    color: white;
+}
+.stepText{
+    color: white;
+}
+.stepText p{
+    font-size: 10px;
+    color: hsl(231, 11%, 63%);
+}
+.stepText h1{
+font-size: 12px;
+}
+.formContent{
+width: 100%;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+/* first Step CSS */
+.firstStep{
+width: auto;
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content:center;
+padding: 20px;
+gap: 30px;
+}
+.stage p{
+    width: auto;
+    color: hsl(231, 11%, 63%);
+}
+.stage h1{
+color: hsl(213, 96%, 18%);
+}
+form{
+width: 100%;
+display: flex;
+align-items: flex-start;
+justify-content: center;
+flex-direction: column;
+}
+form input{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid hsl(231, 11%, 63%);
+}
+.labelContainer{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.labelContainer .error{
+    color: red;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+form input::placeholder{
+    font-weight: bold;
+    color: hsl(231, 11%, 63%);
+}
+form label{
+    color:hsl(213, 96%, 18%); 
+    margin-bottom: 5px;
+}
+.nextStep{
+padding: 10px 20px;
+background-color: hsl(213, 96%, 18%);
+color: white;
+border-radius: 5px;
+border: none;
+font-weight: bold
+}
+.active{
+    background-color: hsl(206, 94%, 87%);
+    color: black;
+}
+.hidden{
+    display: none !important;
+}
+.buttons{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+/* plans CSS */
+.secondStep{
+width: 70%;
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: space-around;
+}
+.plans{
+width: 100%;
+height: auto;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 20px;
+}
+.planItem{
+width: 30%;
+height: auto;
+padding: 10px;
+border: 1px solid hsl(231, 11%, 63%);
+border-radius: 5px;
+display: flex;
+flex-direction: column;
+align-items:flex-start;
+justify-content: center;
+}
+
+.planItem img{
+    margin-bottom: 20px;
+}
+.secondStep .buttons,.thirdStep .buttons,.fourthStep .buttons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.backBtn{
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    color: hsl(231, 11%, 63%);
+}
+.duration{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 24px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(213, 96%, 18%);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: hsl(213, 96%, 18%);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px hsl(213, 96%, 18%);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.onMode{
+    color: hsl(213, 96%, 18%)  !important;
+}
+.selected{
+    border: 2px solid hsl(243, 100%, 62%) !important;
+}
+/* thirdStep CSS */
+.thirdStep{
+    width: 80%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.addContainer{
+width: 100%;
+height: auto;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: center;
+gap: 20px;
+}
+.addItem{
+    width: 100%;
+    padding: 20px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid hsl(231, 11%, 63%);
+    border-radius: 5px;
+}
+.addText h3{
+    font-size: 15px;
+    color:hsl(213, 96%, 18%);
+}
+.addText p{
+    font-size: 12px;
+    font-weight: 500;
+}
+.addItem .addCheck{
+  accent-color: hsl(243, 100%, 62%);
+}
+.free{
+    width: 100%;
+    font-size: 12px;
+    margin-top: 10px;
+    color: hsl(243, 100%, 62%) !important;
+}
+/* fourthStep css */
+.fourthStep{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.planDetails{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.planContainer{
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+.choosenPlan{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.planText{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+.options{
+width: 100%;
+}
+.option{
+    width: 100%;
+    padding: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.total{
+    padding: 20px 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* fifthStep CSS */
+.fifthStep{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+.total .price{
+    font-size: 18px;
+    font-weight: bold;
+    color: hsl(243, 100%, 62%) !important;
+}
+.errorContainer{
+    width: 100%;
+    padding: 5px;
+    border: 2px solid red;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F6BDC0;
+}
+.stageContent{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+/* Phone CSS version */
+
+@media (max-width : 745px) {
+    main{
+        position: relative;
+    }
+    .formContainer{
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background-color: transparent;
+        padding: 0;
+    }
+    .stepsView{
+        width: 100%;
+        height: 30%;
+        background-image: url(assets/images/bg-sidebar-mobile.svg);
+        background-size: cover;
+        flex-direction: row;
+        border-radius: 0;
+        gap: 10px;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .stepsView .step{
+        width: auto;
+    }
+    .stage{
+        width: 100%;
+    }
+    .stepText{
+        display: none;
+    }
+    .buttons{
+       position: fixed;
+       left: 0;
+       bottom: 0;
+       padding: 20px;
+       z-index: 10;
+       background-color: white;
+    }
+    .stageContent{
+        width: 95%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+    }
+    .fifthStep{
+       width: 95%;
+       height: 60%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;  
+    }
+    .stageContent h1{
+        font-size: 25px;
+    }
+    .plans{
+        flex-direction: column;
+        gap: 8px;
+    }
+    .planItem{
+        flex-direction:row ;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 10px;
+        padding: 0 10px;
+    }
+    .planItem img{
+        margin-bottom: 0;
+    }
+    .addItem{
+        padding: 10px;
+    }
+    .errorContainer p{
+        font-size: 12px;
+    }
+    .nextStep{
+        padding: 8px 15px;
+    }
+}
